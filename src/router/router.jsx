@@ -6,6 +6,7 @@ import Mainlayout from "../layout/Mainlayout";
 import SignUp from "../authlayot/SignUp";
 import Signin from "../authlayot/Signin";
 import Home from "../pages/Home";
+import AddArtifacts from "../pages/AddArtifacts";
 
   const router = createBrowserRouter([
     {
@@ -15,7 +16,12 @@ import Home from "../pages/Home";
       children: [
         {
             path:'/',
-            element: <Home></Home>
+            element: <Home></Home>,
+            loader: () => fetch('http://localhost:5000/artifacts'),
+        },
+        {
+          path: 'addArtifacts',
+          element: <AddArtifacts></AddArtifacts>
         },
         {
             path: 'signup',
