@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AuthContext from './AuthContext';
+import { Link } from 'react-router-dom';
+import GoogleLogin from './GoogleLogin';
 
 const SignUp = () => {
+
+    const {createUser} = useContext(AuthContext);
+
+   
 
     const handleSignup = e => {
         e.preventDefault();
@@ -10,14 +17,21 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, photo, email, password)
+
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+        if(!passwordRegex.test(password)){
+           alert("Password At least one uppercase, one lowercase, one number,")
+            return;
+        }
     
-        // createUser(email, password)
-        // .then(result => {
-        //   console.log(result.user)
-        // })
-        // .catch(error => {
-        //   console.log(error.message)
-        // })
+        createUser(email, password)
+        .then(result => {
+          console.log(result.user)
+        })
+        .catch(error => {
+          console.log(error.message)
+        })
       }
 
 
@@ -25,8 +39,7 @@ const SignUp = () => {
         <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left w-1/3">
-            {/* <Lottie animationData={registerLottie}></Lottie>
-             */}
+
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl p-5">
           <h1 className="text-2xl font-bold text-center">SignUp now!</h1>
@@ -61,9 +74,15 @@ const SignUp = () => {
               </div>
             </form>
             
-            {/* <div className='m-4'>
-            <SocialLogin></SocialLogin>
-            </div> */}
+            <div className="mx-6 btn text-xl font-semibold mb-3">
+                  <GoogleLogin></GoogleLogin>
+          </div>
+
+            <div>
+            <p className='text-center mb-4 font-semibold text-xl px-2'>Already have an account? please 
+            <Link className='text-sky-500' to='/signin'>Signin</Link></p>
+            </div>
+           
           </div>
         </div>
       </div>    

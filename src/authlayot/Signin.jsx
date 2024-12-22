@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AuthContext from './AuthContext';
+import { Link } from 'react-router-dom';
+import GoogleLogin from './GoogleLogin';
 
 const Signin = () => {
+    const {singInUser} = useContext(AuthContext);
     const handleSignIn = e => {
         e.preventDefault();
         const form = e.target;
@@ -8,29 +12,23 @@ const Signin = () => {
         const password = form.password.value;
         console.log( email, password)
 
-        // singInUser(email, password)
-        // .then(result => {
-        //     console.log('singin', result.user.email);
-        //     const user = {email: email}
-        //     axios.post('http://localhost:4000/jwt', user, {withCredentials: true} )
-        //     .then(res => {
-        //         console.log(res.data);
-                
-        //     })
-        //     // navigate(from);
-        // })
-        // .catch(error => {
-        //     console.log(error.message);
-        // })
+        singInUser(email, password)
+        .then(result => {
+            console.log('singin', result.user);
+ 
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
     
        
       }
-      
+
     return (
         <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="text-center lg:text-left w-1/3">
-                {/* <Lottie animationData={loginLottie}></Lottie> */}
+             
 
             </div>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl p-5">
@@ -58,8 +56,12 @@ const Signin = () => {
                     </div>
                 </form>
                 <div>
-                {/* <SocialLogin></SocialLogin> */}
+                <GoogleLogin></GoogleLogin>
                 </div>
+                <div>
+            <p className='text-center mb-4 font-semibold text-xl px-2 my-2'> New to this website? please 
+            <Link className='text-sky-500' to='/signup'>SignUp</Link></p>
+            </div>
             </div>
         </div>
 
