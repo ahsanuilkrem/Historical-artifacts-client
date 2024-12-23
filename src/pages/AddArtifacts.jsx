@@ -34,7 +34,7 @@ const AddArtifacts = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    // navigate('/')
+                    navigate('/myArtifacts')
                 }
             })
     }

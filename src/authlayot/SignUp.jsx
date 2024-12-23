@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import AuthContext from './AuthContext';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleLogin from './GoogleLogin';
 
 const SignUp = () => {
 
     const {createUser} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state || '/';
 
    
 
@@ -28,6 +31,7 @@ const SignUp = () => {
         createUser(email, password)
         .then(result => {
           console.log(result.user)
+          navigate(from);
         })
         .catch(error => {
           console.log(error.message)
@@ -54,7 +58,7 @@ const SignUp = () => {
                 <label className="label">
                   <span className="label-text">PhotoURL</span>
                 </label>
-                <input type="text" placeholder="photo url" name='photo' className="input input-bordered" required />
+                <input type="url" placeholder="photo url" name='photo' className="input input-bordered" required />
               </div>
               <div className="form-control">
                 <label className="label">

@@ -10,6 +10,7 @@ import AddArtifacts from "../pages/AddArtifacts";
 import ArtifactDetails from "../pages/ArtifactDetails";
 import AllArtifacts from "../pages/AllArtifacts";
 import PrivateRoute from "./PrivateRoute";
+import MyArifacts from "../pages/MyArifacts";
 
   const router = createBrowserRouter([
     {
@@ -41,6 +42,12 @@ import PrivateRoute from "./PrivateRoute";
             <AllArtifacts></AllArtifacts>
           </PrivateRoute>,
           loader: () => fetch('http://localhost:5000/artifacts'),
+        },
+        {
+          path: 'myArtifacts',
+          element: <PrivateRoute>
+            <MyArifacts></MyArifacts>
+          </PrivateRoute>
         },
         {
             path: 'signup',

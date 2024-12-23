@@ -63,16 +63,71 @@ const Navbar = () => {
             <div className="navbar-end">
 
                 
-          {
+          {/* {
             user ? (
-              <button onClick={handleSignOut} className='btn btn-secondary mr-3'>Log-Out</button>
+              <button> {user?.photoURL} </button>
             ) : (
               <Link to='/signin'>
               <button className='btn btn-secondary mr-3'>signin</button>
               </Link>
             )
-          }
-             
+          } */}
+              {/* <button onClick={handleSignOut} className='btn btn-secondary mr-3'>Log-Out</button> */}
+
+
+              {!user && (
+            
+              <Link to='/signin'>
+              <button className='btn btn-primary mr-3'>signin</button>
+              </Link>
+            
+          )}
+
+
+
+
+
+              {user && (
+          <div className='dropdown dropdown-end z-50'>
+            <div
+              tabIndex={0}
+              role='button'
+              className='btn btn-ghost btn-circle avatar'
+            >
+              <div className='w-10 rounded-full'>
+                <img
+                  referrerPolicy='no-referrer'
+                  alt='User Profile Photo'
+                  src={user?.photoURL}
+                />
+              </div>
+            </div>
+            <ul
+              tabIndex={0}
+              className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
+            >
+              <li>
+                <Link to='/myArtifacts' className='justify-between'>
+                My Artifacts
+                </Link>
+              </li>
+              <li>
+                <Link to='/liked'>Liked Artifacts </Link>
+              </li>
+            
+              <li className='mt-2'>
+                <button
+                  onClick={handleSignOut}
+                  className='bg-yellow-600 block text-center'
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        )}
+
+
             </div>
         </div>
 
