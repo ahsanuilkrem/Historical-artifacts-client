@@ -5,7 +5,7 @@ import useAuth from '../authlayot/useAuth';
 
 const AddArtifacts = () => {
 
-    const {navigate} = useNavigate();
+    const navigate = useNavigate();
     const {user} = useAuth();
 
     const handleAddArtifacts = e => {
@@ -14,14 +14,16 @@ const AddArtifacts = () => {
         // console.log(formData.entries())
         const initialData = Object.fromEntries(formData.entries());
         initialData.Discovered_At = initialData.Discovered_At.split('\n');
-        console.log(initialData);
+        const allData = {like_count: 0,}
+        // console.log(initialData);
+        console.log(allData);
         
         fetch('http://localhost:5000/artifacts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(initialData)
+            body: JSON.stringify(initialData, allData)
         })
             .then(res => res.json())
             .then(data => {
@@ -34,7 +36,7 @@ const AddArtifacts = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    navigate('/myArtifacts')
+                    navigate('/myArtifacts');
                 }
             })
     }
@@ -107,7 +109,7 @@ const AddArtifacts = () => {
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type="text" defaultValue={user?.name} placeholder="Name" name='Name' className="input input-bordered" required />
+                        <input type="text" defaultValue={user?.displayName} placeholder="Name" name='Name' className="input input-bordered" required />
                     </div>
                    
                     <div className="form-control">

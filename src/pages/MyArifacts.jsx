@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../authlayot/useAuth';
 import { MdDelete } from 'react-icons/md';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyArifacts = () => {
 
@@ -78,7 +79,11 @@ const MyArifacts = () => {
                                     <td>{artis.Discovered_By}</td>
                                     <td>{artis.Present_Location}</td>
                                     <td  onClick={() => handleDelet(artis._id)} className='text-red-500'> <MdDelete></MdDelete> </td>
-                                    <td>Update</td>
+                                    <td>
+                                        <Link to={`/update/${artis._id}`}>
+                                        <button className='btn'>Update</button>
+                                        </Link>
+                                    </td>
 
                                 </tr> )
                             }

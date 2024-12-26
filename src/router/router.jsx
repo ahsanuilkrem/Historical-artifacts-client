@@ -11,6 +11,8 @@ import ArtifactDetails from "../pages/ArtifactDetails";
 import AllArtifacts from "../pages/AllArtifacts";
 import PrivateRoute from "./PrivateRoute";
 import MyArifacts from "../pages/MyArifacts";
+import UpdateArtifacts from "../pages/UpdateArtifacts";
+import MyLiked from "../pages/MyLiked";
 
   const router = createBrowserRouter([
     {
@@ -48,6 +50,17 @@ import MyArifacts from "../pages/MyArifacts";
           element: <PrivateRoute>
             <MyArifacts></MyArifacts>
           </PrivateRoute>
+        },
+        {
+          path: '/update/:id',
+          element: <PrivateRoute>
+            <UpdateArtifacts></UpdateArtifacts>
+          </PrivateRoute>,
+          loader: ({params}) => fetch(`http://localhost:5000/artifacts/${params.id}`)
+        },
+        {
+          path: 'liked',
+          element: <MyLiked></MyLiked>
         },
         {
             path: 'signup',

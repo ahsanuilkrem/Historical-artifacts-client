@@ -1,0 +1,123 @@
+[
+    {
+      "Artifact Name": "Ancient Egyptian Vase",
+      "Artifact Image": "https://i.ibb.co.com/nbv4gRr/Egyptian-Vase.jpg",
+      "Artifact Type": "Vase",
+      "Historical_Context": "Used for ceremonial purposes in Ancient Egypt, typically during burial rites.",
+      "CreatedAt": "1200 BC",
+      "DiscoveredAt": "Luxor, Egypt",
+      "Discovered By": "Dr. Sarah Thompson",
+      "Present Location": "British Museum, London",
+      "Artifact_name": "Ancient Egyptian Vase",
+      "Artifact-email": "info@britishmuseum.org"
+    },
+    {
+      "Artifact Name": "Roman Helmet",
+      "Artifact Image": "https://i.ibb.co.com/ZVStzhw/Roman-helmet2.jpg",
+      "Artifact Type": "Helmet",
+      "Historical Context": "A protective gear worn by Roman soldiers during combat.",
+      "CreatedAt": "100 AD",
+      "DiscoveredAt": "Pompeii, Italy",
+      "Discovered By": "Prof. John Lee",
+      "Present Location": "The Louvre, Paris",
+      "Artifact_name": "Roman Helmet",
+      "Artifact-email": "contact@louvre.fr"
+    },
+    {
+      "Artifact Name": "Mayan Calendar Stone",
+      "Artifact Image": "https://i.ibb.co.com/dK6zCVb/Mayan-Calendar.jpg",
+      "Artifact Type": "Stone",
+      "Historical Context": "A carved stone featuring an astronomical calendar from the Mayan civilization.",
+      "CreatedAt": "600 AD",
+      "DiscoveredAt": "Mexico",
+      "Discovered By": "Carlos Martinez",
+      "Present Location": "National Museum of Anthropology, Mexico City",
+      "Artifact_name": "Mayan Calendar Stone",
+      "Artifact-email": "info@mna.mx"
+    },
+    {
+      "Artifact Name": "Greek Bronze Statue",
+      "Artifact Image": "https://i.ibb.co.com/9NVqxdC/Greek-Bronze.jpg",
+      "Artifact Type": "StatueStatue",
+      "Historical Context": "A bronze statue representing a Greek god from the Classical period.",
+      "CreatedAt": "450 BC",
+      "DiscoveredAt": "Athens, Greece",
+      "Discovered By": "Maria Nikos",
+      "Present Location": "National Archaeological Museum, Athens",
+      "Artifact_name": "Greek Bronze Statue",
+      "Artifact-email": "info@nam.gr"
+    },
+    {
+      "Artifact Name": "Viking Sword",
+      "Artifact Image": "https://example.com/viking_sword.jpg",
+      "Artifact Type": "Weapon",
+      "Historical Context": "A sword used by Viking warriors during raids.",
+      "CreatedAt": "800 AD",
+      "DiscoveredAt": "Scandinavia",
+      "Discovered By": "Dr. Olaf Svensson",
+      "Present Location": "The Viking Ship Museum, Oslo",
+      "Artifact_name": "Viking Sword",
+      "Artifact-email": "info@vikingmuseum.no"
+    },
+    {
+      "Artifact Name": "Medieval Scroll",
+      "Artifact Image": "https://example.com/medieval_scroll.jpg",
+      "Artifact Type": "Scroll",
+      "Historical Context": "A parchment scroll containing religious texts from the Middle Ages.",
+      "CreatedAt": "1200 AD",
+      "DiscoveredAt": "France",
+      "Discovered By": "Dr. Emily Laurent",
+      "Present Location": "The British Library, London",
+      "Artifact_name": "Medieval Scroll",
+      "Artifact-email": "enquiries@bl.uk"
+    },
+    {
+      "Artifact Name": "Inca Gold Mask",
+      "Artifact Image": "https://example.com/inca_gold_mask.jpg",
+      "Artifact Type": "Mask",
+      "Historical Context": "A ceremonial gold mask used in rituals by the Inca civilization.",
+      "CreatedAt": "1450 AD",
+      "DiscoveredAt": "Peru",
+      "Discovered By": "Juan Carlos Rivera",
+      "Present Location": "Peru National Museum, Lima",
+      "Artifact_name": "Inca Gold Mask",
+      "Artifact-email": "info@perunationalmuseum.pe"
+    },
+    {
+      "Artifact Name": "Samurai Armor",
+      "Artifact Image": "https://example.com/samurai_armor.jpg",
+      "Artifact Type": "Armor",
+      "Historical Context": "Traditional armor worn by Japanese samurai during feudal times.",
+      "CreatedAt": "1600 AD",
+      "DiscoveredAt": "Kyoto, Japan",
+      "Discovered By": "Hiroshi Takahashi",
+      "Present Location": "Kyoto National Museum, Kyoto",
+      "Artifact_name": "Samurai Armor",
+      "Artifact-email": "info@kyotomuseum.or.jp"
+    },
+    {
+      "Artifact Name": "Chinese Terracotta Warrior",
+      "Artifact Image": "https://example.com/terracotta_warrior.jpg",
+      "Artifact Type": "Statue",
+      "Historical Context": "A life-sized clay soldier from the Terracotta Army, buried with the first Emperor of China.",
+      "CreatedAt": "210 BC",
+      "DiscoveredAt": "Xi'an, China",
+      "Discovered By": "Liang Cheng",
+      "Present Location": "Terracotta Army Museum, Xi'an",
+      "Artifact_name": "Chinese Terracotta Warrior",
+      "Artifact-email": "info@terracottaarmy.com"
+    },
+    {
+      "Artifact Name": "Renaissance Painting",
+      "Artifact Image": "https://example.com/renaissance_painting.jpg",
+      "Artifact Type": "Painting",
+      "Historical Context": "A masterpiece from the Renaissance period, showcasing humanism and naturalism.",
+      "CreatedAt": "1500 AD",
+      "DiscoveredAt": "Florence, Italy",
+      "Discovered By": "Francesco Gallo",
+      "Present Location": "Uffizi Gallery, Florence",
+      "Artifact_name": "Renaissance Painting",
+      "Artifact-email": "uffizi@firenze.it"
+    }
+  ]
+  

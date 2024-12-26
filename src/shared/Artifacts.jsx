@@ -1,14 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TiHeartOutline } from 'react-icons/ti';
 import { Link } from 'react-router-dom';
 
 const Artifacts = ({artifact}) => {
-    const {Artifact_Image, artifact_name, Historical_Context, _id} = artifact;
-    // console.log(artifact) 
+
+      // console.log(artifact)
+      
+    const {Artifact_Image, artifact_name, Historical_Context, _id,  like_count} = artifact;
+    const [likeCount, setLikeCount] = useState(0);
+
+    const handelLikeCount = id => {
+      console.log(id)
+       const like_id = id
+
+       const likeData = {like_id }
+
+       fetch('http://localhost:5000/likeCount', {
+        method: 'POST',
+         headers: {
+                'content-type': 'application/json'
+          },
+           body: JSON.stringify(likeData)
+       })
+       .then(res => res.json())
+       .then(data => {
+        console.log(data);
+       })
+
+
+
+    }
+
     return (
-        <div className="card bg-base-100 w-96 shadow-xl">
+        <div className="card bg-base-100  shadow-xl">
         <figure>
           <img
+          className='h-64 w-full'
             src={Artifact_Image}
             alt={artifact_name} />
         </figure>
@@ -21,7 +48,10 @@ const Artifacts = ({artifact}) => {
           <button className="text-yellow-600 font-medium ">View Details</button>
           </Link>
           </div>
-          <p className='flex  justify-items-start items-center gap-2'> <TiHeartOutline />  0 Likes </p>
+          <p className='flex items-center gap-1' > <TiHeartOutline /> {like_count}
+          <span onClick={() => handelLikeCount(_id)}>Likes</span> 
+          </p>
+  
         </div>
       </div>
     );
