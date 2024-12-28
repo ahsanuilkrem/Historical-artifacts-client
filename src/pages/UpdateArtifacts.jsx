@@ -43,7 +43,7 @@ const UpdateArtifacts = () => {
 
     return (
         <div className='max-w-4xl mx-auto my-8'>
-        <h2 className='text-center text-2xl font-bold text-zinc-600 my-3'>Add Artifacts</h2>
+        <h2 className='text-center text-2xl font-bold text-zinc-600 my-3'>Update Artifacts</h2>
         <div className="card bg-slate-300 w-full  shadow-2xl">
             <form onSubmit={handleUpdate} className="card-body">
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>

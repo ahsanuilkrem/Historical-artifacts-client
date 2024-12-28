@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import AuthContext from '../authlayot/AuthContext';
+import haderIcon from '../../public/icon/hederIcon.png'
 
 const Navbar = () => {
 
@@ -50,8 +51,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">
-                 
-                    <h3>Historical Artifacts Tracker</h3>
+                    <img src={haderIcon} className='w-10 h-10' />
+                    <h3>Historical Artifacts </h3>
                 </a>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -62,19 +63,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
 
-                
-          {/* {
-            user ? (
-              <button> {user?.photoURL} </button>
-            ) : (
-              <Link to='/signin'>
-              <button className='btn btn-secondary mr-3'>signin</button>
-              </Link>
-            )
-          } */}
-              {/* <button onClick={handleSignOut} className='btn btn-secondary mr-3'>Log-Out</button> */}
-
-
+    
               {!user && (
             
               <Link to='/signin'>

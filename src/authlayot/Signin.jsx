@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import AuthContext from './AuthContext';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleLogin from './GoogleLogin';
+import axios from 'axios';
 
 const Signin = () => {
     const {singInUser} = useContext(AuthContext);
@@ -17,9 +18,18 @@ const Signin = () => {
 
         singInUser(email, password)
         .then(result => {
-            console.log('singin', result.user);
+            console.log('singin', result.user.email);
 
-             navigate(from);
+
+            const user = { email: email }
+            axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
+            .then(res =>  {
+                    console.log(res.data);
+            })
+
+           
+            // navigate(from);
+             
  
         })
         .catch(error => {

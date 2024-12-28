@@ -60,7 +60,9 @@ import MyLiked from "../pages/MyLiked";
         },
         {
           path: 'liked',
-          element: <MyLiked></MyLiked>
+          element: <PrivateRoute>
+            <MyLiked></MyLiked>
+          </PrivateRoute>
         },
         {
             path: 'signup',
