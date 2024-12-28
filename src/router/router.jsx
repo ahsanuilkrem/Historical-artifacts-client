@@ -23,7 +23,7 @@ import MyLiked from "../pages/MyLiked";
         {
             path:'/',
             element: <Home></Home>,
-            loader: () => fetch('http://localhost:5000/artifacts'),
+            // loader: () => fetch('http://localhost:5000/artifacts')
         },
         {
           path: 'addArtifacts',
@@ -43,7 +43,7 @@ import MyLiked from "../pages/MyLiked";
           element: <PrivateRoute>
             <AllArtifacts></AllArtifacts>
           </PrivateRoute>,
-          loader: () => fetch('http://localhost:5000/artifacts'),
+        
         },
         {
           path: 'myArtifacts',

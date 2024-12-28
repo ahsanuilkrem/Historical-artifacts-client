@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Artifacts from '../shared/Artifacts';
-import { useLoaderData } from 'react-router-dom';
+import axios from 'axios';
+import useAuth from '../authlayot/useAuth';
 
 const AllArtifacts = () => {
-    const artifacts = useLoaderData();
-    // console.log(artifacts);
+
+    const [artic, setArtic] = useState([]);
+    const { user } = useAuth();
+    // console.log(artic)
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/artifacts', {withCredentials: true} )
+        .then(res => (setArtic(res.data)))
+
+    }, [user.email])
+  
+   
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-6'>
         {
-            artifacts.map(artifact =>  <Artifacts key={artifact._id} artifact={artifact}></Artifacts>)
+            artic.map(artifact =>  <Artifacts key={artifact._id} artifact={artifact}></Artifacts>)
         }
     </div>
     );

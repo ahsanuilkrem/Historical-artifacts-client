@@ -7,13 +7,13 @@ const MyLiked = () => {
     const [likes, setLikes] = useState([]);
     // console.log(likes)
 
-    // useEffect(() => {
-        // fetch(`http://localhost:5000/artifacts/?email=${user?.email}`)
-        // .then(res => res.json())
-    //     .then(data => {
-    //         setLikes(data);
-    //     })
-    // }, [user])
+    useEffect(() => {
+        fetch(`http://localhost:5000/likeCount?email=${user.email}`)
+        .then(res => res.json())
+        .then(data => {
+            setLikes(data);
+        })
+    }, [user])
 
 
     return (

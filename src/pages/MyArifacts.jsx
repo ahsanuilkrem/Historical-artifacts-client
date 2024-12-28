@@ -7,7 +7,7 @@ const MyArifacts = () => {
 
     const [artic, setArtic] = useState([]);
     const { user } = useAuth();
-    console.log(artic)
+    // console.log(artic)
 
     useEffect(() => {
 
@@ -16,7 +16,7 @@ const MyArifacts = () => {
         // .then(data => setArtic(data))
 
         axios.get(`http://localhost:5000/artifacts/?email=${user.email}`, {withCredentials: true} )
-        .then(res => console.log(setArtic(res.data)))
+        .then(res => (setArtic(res.data)))
 
         
 

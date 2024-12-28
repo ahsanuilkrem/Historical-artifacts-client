@@ -33,36 +33,6 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider)
     }
 
-    // useEffect(() => {
-    //     const unsuscribe = onAuthStateChanged(auth, currentUser => {
-    //         setUser(currentUser);
-    //         console.log(currentUser?.email);
-    //         if (currentUser?.email) {
-    //             const user = { email: currentUser.email }
-    //             axios.post('http://localhost:5000/jwt', user,
-    //                 { withCredentials: true })
-    //                 .then(res => {
-    //                     console.log('login token', res.data);
-    //                     setLoading(false);
-    //                 })
-    //         }
-    //         else {
-    //             axios.post('http://localhost:5000/logout', {}, {
-    //                 withCredentials: true
-    //             })
-    //                 .then(res => {
-    //                     console.log('logout', res.data);
-    //                     setLoading(false);
-    //                 })
-    //         }
-
-    //     })
-    //     return () => {
-    //         unsuscribe();
-    //     }
-    // }, [])
-
-
     const authInfo = {
         user,
         loading,
@@ -71,16 +41,30 @@ const AuthProvider = ({ children }) => {
         signOutuse,
         singInWithGoogle,
 
-
     }
-
 
     useEffect(() => {
         const unsuscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-            console.log(currentUser);
+            console.log('user State don :',currentUser?.email);
+            if(currentUser?.email){
+                const user = {email: currentUser.email };
 
-            setLoading(false);
+                axios.post('http://localhost:5000/jwt', user, {withCredentials:true})
+                 .then(res => {
+                    console.log('login token', res.data);
+                    setLoading(false);
+                 } ) 
+            }
+            else{
+                axios.post('http://localhost:5000/logout', {}, {
+                    withCredentials: true
+                })
+                .then(res =>  {
+                    console.log('logout', res.data);
+                    setLoading(false);
+                } )
+            } 
         })
         return () => {
             unsuscribe();

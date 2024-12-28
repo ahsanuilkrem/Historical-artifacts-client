@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import { TiHeartOutline } from 'react-icons/ti';
 import { Link } from 'react-router-dom';
+import useAuth from '../authlayot/useAuth';
 
 const Artifacts = ({artifact}) => {
 
       // console.log(artifact)
+      const {user} = useAuth();
       
     const {Artifact_Image, artifact_name, Historical_Context, _id,  like_count} = artifact;
     const [likeCount, setLikeCount] = useState(0);
 
     const handelLikeCount = id => {
       console.log(id)
-       const like_id = id
+       const like_id = id;
+       const email = user.email;
 
-       const likeData = {like_id }
+       const likeData = {like_id, email }
 
        fetch('http://localhost:5000/likeCount', {
         method: 'POST',
