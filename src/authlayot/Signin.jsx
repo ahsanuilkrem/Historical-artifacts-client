@@ -19,18 +19,9 @@ const Signin = () => {
         singInUser(email, password)
         .then(result => {
             console.log('singin', result.user.email);
+            navigate(from);
 
 
-            // const user = { email: email }
-            // axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
-            // .then(res =>  {
-            //         console.log(res.data);
-            // })
-
-           
-            // navigate(from);
-             
- 
         })
         .catch(error => {
             console.log(error.message);

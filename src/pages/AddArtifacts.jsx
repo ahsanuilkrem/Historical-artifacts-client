@@ -18,7 +18,7 @@ const AddArtifacts = () => {
         // console.log(initialData);
         console.log(allData);
         
-        fetch('http://localhost:5000/artifacts', {
+        fetch('https://assignment-eleven-historical-server.vercel.app/artifacts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

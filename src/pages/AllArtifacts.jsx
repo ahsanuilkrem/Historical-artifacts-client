@@ -7,13 +7,13 @@ const AllArtifacts = () => {
 
     const [artic, setArtic] = useState([]);
     const { user } = useAuth();
-    // console.log(artic)
+     console.log(artic)
 
     useEffect(() => {
-        axios.get('http://localhost:5000/artifacts', {withCredentials: true} )
+        axios.get('https://assignment-eleven-historical-server.vercel.app/artifacts', {withCredentials:true} )
         .then(res => (setArtic(res.data)))
 
-    }, [user.email])
+    }, [])
   
    
     return (

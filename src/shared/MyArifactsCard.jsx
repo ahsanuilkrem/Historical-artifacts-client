@@ -22,7 +22,7 @@ const MyArifactsCard = ({ artis }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/artifacts/${_id}`, {
+                fetch(`https://assignment-eleven-historical-server.vercel.app/artifacts/${_id}`, {
                     method: 'delete'
                 })
                     .then(res => res.json())

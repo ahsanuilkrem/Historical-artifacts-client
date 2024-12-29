@@ -2,21 +2,25 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../authlayot/useAuth';
 import MyArifactsCard from '../shared/MyArifactsCard';
 import axios from 'axios';
+import useAxiosSecure from '../shared/useAxiosSecure';
 
 const MyArifacts = () => {
 
     const [artic, setArtic] = useState([]);
     const { user } = useAuth();
     // console.log(artic)
+        const axiosSceure = useAxiosSecure();
 
     useEffect(() => {
 
-        //  fetch(`http://localhost:5000/artifacts?email=${user.email}`)
-        //   .then(res => res.json())
-        // .then(data => setArtic(data))
+    
 
-        axios.get(`http://localhost:5000/artifacts/?email=${user.email}`, {withCredentials: true} )
-        .then(res => (setArtic(res.data)))
+        // axios.get(`https://assignment-eleven-historical-server.vercel.app/artifacts/?email=${user.email}`, {withCredentials: true} )
+        // .then(res => (setArtic(res.data)))
+
+        axiosSceure.get(`myartifacts?email=${user.email}`, {withCredentials: true})
+        .then(res => (setArtic(res.data)));
+
 
         
 

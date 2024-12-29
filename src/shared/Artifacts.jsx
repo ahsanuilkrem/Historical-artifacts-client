@@ -18,7 +18,7 @@ const Artifacts = ({artifact}) => {
 
        const likeData = {like_id, email }
 
-       fetch('http://localhost:5000/likeCount', {
+       fetch('https://assignment-eleven-historical-server.vercel.app/likeCount', {
         method: 'POST',
          headers: {
                 'content-type': 'application/json'

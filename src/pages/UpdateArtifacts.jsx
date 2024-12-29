@@ -17,7 +17,7 @@ const UpdateArtifacts = () => {
             initialData.Discovered_At = initialData.Discovered_At.split('\n');
             console.log(initialData);
             
-            fetch(`http://localhost:5000/artifacts/${_id}`, {
+            fetch(`https://assignment-eleven-historical-server.vercel.app/artifacts/${_id}`, {
                 method: 'put',
                 headers: {
                     'content-type': 'application/json'

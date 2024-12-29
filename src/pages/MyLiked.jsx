@@ -8,7 +8,7 @@ const MyLiked = () => {
     // console.log(likes)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/likeCount?email=${user.email}`)
+        fetch(`https://assignment-eleven-historical-server.vercel.app/likeCount?email=${user.email}`)
         .then(res => res.json())
         .then(data => {
             setLikes(data);

@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
 import Artifacts from '../shared/Artifacts';
 import Banner from '../shared/Banner';
 import ImgSection from '../shared/ImgSection';
 import ExSection from '../shared/ExSection';
 import axios from 'axios';
-import useAuth from '../authlayot/useAuth';
+
 
 const Home = () => {
 
     const [artic, setArtic] = useState([]);
-    const { user } = useAuth();
-    // console.log(artic)
+    console.log(artic)
     useEffect(() => {
-        axios.get('http://localhost:5000/artifacts', {withCredentials: true} )
+        axios.get('https://assignment-eleven-historical-server.vercel.app/artifacts', )
         .then(res => (setArtic(res.data)))
 
-    }, [user.email])
+    }, [])
     
 
     return (
@@ -34,3 +32,4 @@ const Home = () => {
 };
 
 export default Home;
+

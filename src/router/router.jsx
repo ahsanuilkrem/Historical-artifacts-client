@@ -23,7 +23,7 @@ import MyLiked from "../pages/MyLiked";
         {
             path:'/',
             element: <Home></Home>,
-            // loader: () => fetch('http://localhost:5000/artifacts')
+           
         },
         {
           path: 'addArtifacts',
@@ -36,7 +36,7 @@ import MyLiked from "../pages/MyLiked";
           element: <PrivateRoute>
             <ArtifactDetails></ArtifactDetails>
           </PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/artifacts/${params.id}`)
+          loader: ({params}) => fetch(`https://assignment-eleven-historical-server.vercel.app/artifacts/${params.id}`)
         },
         {
           path: 'allArtifats',
@@ -56,7 +56,7 @@ import MyLiked from "../pages/MyLiked";
           element: <PrivateRoute>
             <UpdateArtifacts></UpdateArtifacts>
           </PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/artifacts/${params.id}`)
+          loader: ({params}) => fetch(`https://assignment-eleven-historical-server.vercel.app/artifacts/${params.id}`)
         },
         {
           path: 'liked',
