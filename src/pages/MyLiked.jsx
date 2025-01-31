@@ -1,30 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../authlayot/useAuth';
+import { Helmet } from 'react-helmet-async';
 
 const MyLiked = () => {
 
-    const {user} = useAuth();
+    const { user } = useAuth();
     const [likes, setLikes] = useState([]);
     // console.log(likes)
 
     useEffect(() => {
         fetch(`https://assignment-eleven-historical-server.vercel.app/likeCount?email=${user.email}`)
-        .then(res => res.json())
-        .then(data => {
-            setLikes(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                setLikes(data);
+            })
     }, [user])
 
 
     return (
         <div>
-           
+            <Helmet>
+                <title>Historical Artifacts | My Liked</title>
+
+            </Helmet>
+
             <div className="overflow-x-auto">
-            {!user && (
-                   <p className='text-3xl font-bold'> If you don't have any Historical Artifacts, please liked historisal artifacts </p>      
-             )}
+                {!user && (
+                    <p className='text-3xl font-bold'> If you don't have any Historical Artifacts, please liked historisal artifacts </p>
+                )}
                 <table className="table">
-                   
+
                     <thead>
                         <tr>
                             <th></th>
@@ -33,23 +38,23 @@ const MyLiked = () => {
                             <th>Created At</th>
                             <th>Discovered By</th>
                             <th>Present Location</th>
-                           
+
                         </tr>
                     </thead>
                     <tbody>
 
-                            {
-                                likes.map((artis, index) =>  <tr>
-                                     <th>{index + 1} </th>
-                                     <td>{artis.email}</td>
-                                    <td>{artis.artifact_name} </td>
-                                    <td>{artis.Created_At} </td>
-                                    <td>{artis.Discovered_By}</td>
-                                    <td>{artis.Present_Location}</td>
-                                
-                                </tr> )
-                            }
-                     
+                        {
+                            likes.map((artis, index) => <tr>
+                                <th>{index + 1} </th>
+                                <td>{artis.email}</td>
+                                <td>{artis.artifact_name} </td>
+                                <td>{artis.Created_At} </td>
+                                <td>{artis.Discovered_By}</td>
+                                <td>{artis.Present_Location}</td>
+
+                            </tr>)
+                        }
+
                     </tbody>
                 </table>
             </div>
