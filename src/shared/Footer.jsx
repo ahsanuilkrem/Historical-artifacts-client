@@ -20,7 +20,7 @@ const Footer = () => {
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Artifacts</a>
-          <a className="link link-hover">Historical</a>
+          <a className="link link-hover">All Artifacts</a>
         </nav>
         <nav>
           <h6 className="footer-title">Social</h6>

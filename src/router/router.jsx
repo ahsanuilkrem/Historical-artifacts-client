@@ -13,12 +13,13 @@ import PrivateRoute from "./PrivateRoute";
 import MyArifacts from "../pages/MyArifacts";
 import UpdateArtifacts from "../pages/UpdateArtifacts";
 import MyLiked from "../pages/MyLiked";
+import ErrorPage from "../pages/ErrorPage";
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Mainlayout></Mainlayout>,
-      errorElement: <h2>this is error</h2>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path:'/',
@@ -36,7 +37,7 @@ import MyLiked from "../pages/MyLiked";
           element: <PrivateRoute>
             <ArtifactDetails></ArtifactDetails>
           </PrivateRoute>,
-          loader: ({params}) => fetch(`https://assignment-eleven-historical-server.vercel.app/artifacts/${params.id}`)
+          // loader: ({params}) => fetch(`https://assignment-eleven-historical-server.vercel.app/artifacts/${params.id}`)
         },
         {
           path: 'allArtifats',
@@ -77,3 +78,5 @@ import MyLiked from "../pages/MyLiked";
   ]);
 
   export default router;
+
+  // https://historical-artifacts-67135.web.app/
